@@ -1,0 +1,134 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+
+      <form #studentForm="ngForm" (ngSubmit)="save()" novalidate>
+
+        <div class="card shadow-lg border-0">
+
+          <div class="card-header bg-primary text-white text-center">
+            <h4 class="mb-0">Add Student</h4>
+          </div>
+
+          <div class="card-body">
+
+            <div class="row">
+
+              <!-- First Name -->
+              <div class="col-md-6 mb-3">
+                <label class="form-label">First Name</label>
+                <input type="text"
+                       class="form-control"
+                       name="firstName"
+                       [(ngModel)]="student.firstName"
+                       #firstName="ngModel"
+                       required
+                       minlength="2"
+                       placeholder="Enter first name">
+
+                <small class="text-danger" *ngIf="firstName.invalid && firstName.touched">
+                  First name is required (min 2 characters)
+                </small>
+              </div>
+
+              <!-- Last Name -->
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Last Name</label>
+                <input type="text"
+                       class="form-control"
+                       name="lastName"
+                       [(ngModel)]="student.lastName"
+                       #lastName="ngModel"
+                       required
+                       placeholder="Enter last name">
+
+                <small class="text-danger" *ngIf="lastName.invalid && lastName.touched">
+                  Last name is required
+                </small>
+              </div>
+
+              <!-- Email -->
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Email</label>
+                <input type="email"
+                       class="form-control"
+                       name="email"
+                       [(ngModel)]="student.email"
+                       #email="ngModel"
+                       required
+                       email
+                       placeholder="Enter email">
+
+                <small class="text-danger" *ngIf="email.invalid && email.touched">
+                  Enter valid email
+                </small>
+              </div>
+
+              <!-- Mobile -->
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Mobile Number</label>
+                <input type="text"
+                       class="form-control"
+                       name="mobileNumber"
+                       [(ngModel)]="student.mobileNumber"
+                       #mobile="ngModel"
+                       required
+                       pattern="^[0-9]{10}$"
+                       placeholder="Enter mobile number">
+
+                <small class="text-danger" *ngIf="mobile.invalid && mobile.touched">
+                  Enter valid 10 digit mobile number
+                </small>
+              </div>
+
+              <!-- Class -->
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Class</label>
+                <input type="text"
+                       class="form-control"
+                       name="class"
+                       [(ngModel)]="student.class"
+                       #classField="ngModel"
+                       required
+                       placeholder="Enter class">
+
+                <small class="text-danger" *ngIf="classField.invalid && classField.touched">
+                  Class is required
+                </small>
+              </div>
+
+              <!-- Address -->
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Address</label>
+                <input type="text"
+                       class="form-control"
+                       name="address"
+                       [(ngModel)]="student.address"
+                       #address="ngModel"
+                       required
+                       placeholder="Enter address">
+
+                <small class="text-danger" *ngIf="address.invalid && address.touched">
+                  Address is required
+                </small>
+              </div>
+
+            </div>
+
+            <div class="d-grid mt-3">
+              <button class="btn btn-success btn-lg"
+                      type="submit"
+                      [disabled]="studentForm.invalid">
+                Save Student
+              </button>
+            </div>
+
+          </div>
+
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</div>

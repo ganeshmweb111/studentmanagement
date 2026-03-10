@@ -1,0 +1,46 @@
+<div class="container mt-4">
+  <h3>Manage List</h3>
+
+  <div class="text-end mb-2">
+    <a routerLink="/students/add" class="btn btn-success">
+      Add Student + 
+    </a>
+  </div>
+
+  <table class="table table-bordered table-striped">
+    <thead class="table-dark">
+      <tr>
+        <th>#</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+          <th>Mobile Number</th>
+        <th>Email</th>
+        <th>Class</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let student of students; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ student.firstName }}</td>
+        <td>{{ student.lastName }}</td>
+          <td>{{ student.mobileNumber }}</td>
+        <td>{{ student.email }}</td>
+        <td>{{ student.class }}</td>
+        <td>
+      <button class="btn btn-outline-primary btn-sm"
+        [routerLink]="['/edit-student', student.id]">
+  <i class="bi bi-pencil-square"></i>
+</button> &nbsp;
+
+          <button class="btn btn-danger btn-sm"
+        (click)="deleteStudent(student.id!)">
+  <i class="bi bi-trash"></i>
+</button>
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

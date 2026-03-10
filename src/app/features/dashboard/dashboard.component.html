@@ -1,0 +1,66 @@
+<div class="container mt-4">
+
+
+  <div class="d-flex justify-content-between mt-3">
+    <h4> Welcome to Student Management Dashboard</h4>
+    <a routerLink="/students" class="btn btn-primary">
+      Manage Students
+    </a>
+  </div>
+
+<div class="container mt-4">
+
+  <!-- Statistics Cards -->
+
+  <div class="row g-3">
+<div class="col-md-3">
+  <div class="card text-center shadow border-0 bg-primary text-white">
+    <div class="card-body">
+      <h5>Total Students</h5>
+      <h2>{{ totalStudents }}</h2>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-3">
+  <div class="card text-center shadow border-0 bg-success text-white">
+    <div class="card-body">
+      <h5>10th Class</h5>
+      <h2>{{ class10 }}</h2>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-3">
+  <div class="card text-center shadow border-0 bg-warning text-dark">
+    <div class="card-body">
+      <h5>12th Class</h5>
+      <h2>{{ class12 }}</h2>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-3">
+  <div class="card text-center shadow border-0 bg-danger text-white">
+    <div class="card-body">
+      <h5>Other Classes</h5>
+      <h2>{{ otherClass }}</h2>
+    </div>
+  </div>
+</div>
+  </div>
+
+<div class="card mt-4 shadow">
+  <div class="card-body text-center">
+    <h5 class="mb-3">Student Class Distribution</h5>
+
+    <div class="chart-container">
+      <canvas id="studentChart"></canvas>
+    </div>
+
+  </div>
+</div>
+</div>
+
+
+</div>

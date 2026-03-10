@@ -1,0 +1,34 @@
+<div class="container d-flex justify-content-center align-items-center vh-100">
+  <div class="card shadow-lg p-4" style="width: 400px; border-radius: 15px;">
+
+    <div class="text-center mb-4">
+      <h3 class="fw-bold">Admin Login</h3>
+      <p class="text-muted">Welcome back! Please login</p>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Email</label>
+      <input type="email"
+             [(ngModel)]="email"
+             class="form-control"
+             placeholder="Enter your email">
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Password</label>
+      <input type="password"
+             [(ngModel)]="password"
+             class="form-control"
+             placeholder="Enter your password">
+    </div>
+
+    <button class="btn btn-primary w-100" (click)="login()">
+      Login
+    </button>
+
+    <div class="text-center mt-3">
+      <small class="text-muted">Forgot Password?</small>
+    </div>
+
+  </div>
+</div>
